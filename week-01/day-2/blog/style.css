@@ -1,0 +1,39 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #7986cb;
+    margin: 0 200px;
+    color: #ececec;
+
+}
+
+h1 {
+    background: #49599a;
+    padding: 20px 200px;
+    margin: 0 -200px;
+}
+
+h3 {
+    font-weight: bold;
+    margin: 2px; 
+}
+
+div {
+    border: 2px solid black;
+    background:  #49599a;
+    padding: 0 5px;
+    margin: 10px 0;
+}
+
+.postTitle {
+    font-weight: bold;
+    font-size: 25px;
+    padding: 0 3px;
+    margin: 5px 0;
+}
+
+.button {
+    display: block;
+    padding: 5px 20px;
+    background-color: #49599a;
+    border-radius: 10%;
+}
