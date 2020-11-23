@@ -4,10 +4,10 @@
 //    with the following content: `["koal", "pand", "zebr"]`
 // -  Add all elements an `"a"` at the end
 
-let animals = ["koal", "pand", "zebr"];
+let animals = ['koal', 'pand', 'zebr'];
 
-animals.forEach(function(): string {
-    return animals += 'a';
-})
+for (let i: number = 0; i < animals.length; i++) {
+	animals[i] += 'a';
+}
 
 console.log(animals);
