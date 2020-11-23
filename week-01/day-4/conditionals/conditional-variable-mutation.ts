@@ -5,7 +5,7 @@ let out: number = 0;
 
 // if a is even increment out by one
 if (a % 2 === 0) {
-    out++;
+	out++;
 }
 
 console.log(out);
@@ -18,11 +18,11 @@ let out2: string = '';
 // if more than 20 set out2 to "More!"
 
 if (b > 10 && b < 20) {
-    out2 = 'Sweet!';
+	out2 = 'Sweet!';
 } else if (b < 10) {
-    out2 = 'Less!';
+	out2 = 'Less!';
 } else if (b > 20) {
-    out2 = 'More!';
+	out2 = 'More!';
 }
 
 console.log(out2);
@@ -38,14 +38,14 @@ let isBonus: boolean = false;
 // if is_bonus is true c should remain the same
 
 if (credits >= 50 && isBonus === false) {
-    c -= 2;
+	c -= 2;
 } else if (credits < 50 && isBonus === false) {
-    c -= 1;
+	c -= 1;
 }
 
 console.log(c);
 
-let d: number =  8;
+let d: number = 8;
 let time: number = 120;
 let out3: string = '';
 
@@ -57,11 +57,11 @@ let out3: string = '';
 // otherwise set out3 to "Run Forest Run!"
 
 if (d % 4 === 0 && time <= 200) {
-    out3 = 'check';
+	out3 = 'check';
 } else if (time > 200) {
-    out3 = 'Time out';
+	out3 = 'Time out';
 } else {
-    out3 = 'Run Forest Run!'
+	out3 = 'Run Forest Run!';
 }
 
 console.log(out3);
