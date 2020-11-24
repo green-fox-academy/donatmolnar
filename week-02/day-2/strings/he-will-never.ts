@@ -1,4 +1,7 @@
 'use strict';
+
+//NOT WORKING YET - PLEASE COME BACK LATER
+
 // Things are a little bit messed up
 // Your job is to decode the notSoCrypticMessage by using the hashmap as a look up table
 // Assemble the fragments into the out variable
@@ -17,5 +20,34 @@ let hashmap = {
   3: 'say goodbye '
 };
 
+
+out += Object.keys(hashmap).forEach(key => {
+  console.log(hashmap[key]);
+})
+
+
+function mapOrder(object: any, order: number[], key: string) {
+  object.sort((a: number, b: number) => {
+    let A = a[key];
+    let B = b[key];
+    return order.indexOf(A) > order.indexOf(B) ? 1 : -1;
+  });
+  return object;
+};
+
+
+console.log(mapOrder(hashmap, notSoCrypticMessage, key));
+
+//ordered_array = item_array.mapOrder(item_array, item_order, 'id');
+
+/*
+Find the values of key in an object:
+Object.keys(pistike1).forEach(key => {
+ console.log(pistike1[key])
+}) 
+*/
+
+//It sorts numbered arrays 
+//console.log(notSoCrypticMessage.sort((a, b) => a - b));
 
 console.log(out)

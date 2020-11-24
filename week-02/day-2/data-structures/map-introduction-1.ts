@@ -1,10 +1,12 @@
 'use strict';
 
-let myMap = {
-    97:'a',
-    98:'b',
-    99:'c',
-    65:'A',
-    66:'B',
-    67:'C'
-}
+let myMap = {};
+console.log(myMap);
+
+
+myMap['97'] = 'a';
+myMap['98'] = 'b';
+myMap['99'] = 'c';
+myMap['65'] = 'A';
+myMap['66'] = 'B';
+myMap['67'] = 'C';
