@@ -12,4 +12,8 @@
 
 let todoText: string = ' - Buy milk\n';
 
+todoText = 'My todo:\n' + todoText;
+todoText += ' - Download games\n';
+todoText += '    -Diablo';
+
 console.log(todoText);

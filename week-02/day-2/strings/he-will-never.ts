@@ -17,4 +17,5 @@ let hashmap = {
   3: 'say goodbye '
 };
 
+
 console.log(out)

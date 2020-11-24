@@ -4,4 +4,7 @@
 
 let url: string = 'https//www.reddit.com/r/nevertellmethebots';
 
+url = url.replace(/bots/g, 'odds');
+url = url.replace(/https/g, 'https:');
+
 console.log(url);
