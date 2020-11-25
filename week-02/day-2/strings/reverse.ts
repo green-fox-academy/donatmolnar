@@ -5,10 +5,10 @@
 let toBeReversed: string = `.eslaf eb t'ndluow ecnetnes siht ,dehctiws erew eslaf dna eurt fo sgninaem eht fI`;
 
 function reverse(input: string): string {
-	let splitArray: string[] = input.split('');
-	let reversedArray: string[] = splitArray.reverse();
-	let joinedArray: string = reversedArray.join('');
-	return joinedArray;
+  let splitArray: string[] = input.split('');
+  let reversedArray: string[] = splitArray.reverse();
+  let joinedArray: string = reversedArray.join('');
+  return joinedArray;
 }
 
 console.log(reverse(toBeReversed));

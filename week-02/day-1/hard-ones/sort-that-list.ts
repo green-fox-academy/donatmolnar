@@ -7,16 +7,15 @@
 let array: number[] = [];
 
 function bubble(input: number[]) {
-    input.sort((a: number, b: number) => a - b);
-    }
+  input.sort((a: number, b: number) => a - b);
+}
 
 function advancedBubble(input: number[], input2: boolean) {
-    if (input2 == true) {
-        input.sort((a: number, b: number) => a - b);
-    }
-}  
+  if (input2 == true) {
+    input.sort((a: number, b: number) => a - b);
+  }
+}
 //console.log(notSoCrypticMessage.sort((a, b) => a - b));
-
 
 //  Example:
 console.log(bubble([34, 12, 24, 9, 5]));

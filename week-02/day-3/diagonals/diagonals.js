@@ -20,6 +20,3 @@ ctx.beginPath();
 ctx.moveTo(0, 400);
 ctx.lineTo(600, 0);
 ctx.stroke();
-
-
-

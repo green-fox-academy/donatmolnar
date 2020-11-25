@@ -5,11 +5,11 @@
 let parameter: number = 5;
 
 function calculateSum(parameter: number): number {
-	let sum: number = 0;
-	for (let i: number = 0; i <= parameter; i++) {
-		sum += i;
-	}
-	return sum;
+  let sum: number = 0;
+  for (let i: number = 0; i <= parameter; i++) {
+    sum += i;
+  }
+  return sum;
 }
 
 console.log(calculateSum(parameter));

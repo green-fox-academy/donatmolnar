@@ -9,9 +9,9 @@
 //    `"orchid", "violet", "pink", "hot pink"`
 
 let colors = [
-	['lime', 'forest green', 'olive', 'pale green', 'spring green'],
-	['orange red', 'red', 'tomato'],
-	['orchid', 'violet', 'pink', 'hot pink'],
+  ['lime', 'forest green', 'olive', 'pale green', 'spring green'],
+  ['orange red', 'red', 'tomato'],
+  ['orchid', 'violet', 'pink', 'hot pink'],
 ];
 
 console.log(colors[0]);

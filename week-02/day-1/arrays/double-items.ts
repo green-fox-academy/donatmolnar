@@ -9,5 +9,5 @@
 let drinks = ['Gin', 'Whiskey', 'Wine', 'Beer'];
 
 drinks.forEach(function (value): void {
-	console.log(value + value);
+  console.log(value + value);
 });

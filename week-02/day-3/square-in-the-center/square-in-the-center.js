@@ -8,4 +8,4 @@ const ctx = canvas.getContext('2d');
 
 ctx.fillStyle = 'lime';
 
-ctx.fillRect(295, 195, 10 ,10);
+ctx.fillRect(295, 195, 10, 10);

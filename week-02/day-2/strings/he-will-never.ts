@@ -36,7 +36,7 @@ function mapOrder(object: any, order: number[], key: string) {
 };
 
 
-console.log(mapOrder(hashmap, notSoCrypticMessage, key));
+console.log(mapOrder(hashmap, notSoCrypticMessage, Object.keys(hashmap[key])));
 
 //ordered_array = item_array.mapOrder(item_array, item_order, 'id');
 

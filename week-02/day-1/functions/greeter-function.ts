@@ -8,7 +8,7 @@
 let nameToGreet = 'Green Fox';
 
 function greet(name: string): string {
-	return 'Greetings, dear ' + name;
+  return 'Greetings, dear ' + name;
 }
 
 console.log(greet(nameToGreet));

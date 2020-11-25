@@ -12,13 +12,13 @@ const ctx = canvas.getContext('2d');
 let color = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 
 function drawRect(x, y) {
-	ctx.fillStyle = y;
-	ctx.fillRect(300 - x / 2, 200 - x / 2, x, x);
+  ctx.fillStyle = y;
+  ctx.fillRect(300 - x / 2, 200 - x / 2, x, x);
 }
 
 let numOfRect = 10;
 
 for (let i = 0; i < numOfRect; i++) {
-	ctx.fillStyle = color[i];
-	drawRect(600 - i * 70, color[i]);
+  ctx.fillStyle = color[i];
+  drawRect(600 - i * 70, color[i]);
 }

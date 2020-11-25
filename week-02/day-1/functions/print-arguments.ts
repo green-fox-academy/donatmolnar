@@ -5,7 +5,7 @@
 //    (can have multiple number of arguments)
 
 function printParams(name: string): void {
-	console.log(name);
+  console.log(name);
 }
 
 printParams('Joe');

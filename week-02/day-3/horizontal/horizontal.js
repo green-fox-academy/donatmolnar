@@ -10,15 +10,15 @@ const ctx = canvas.getContext('2d');
 // Draw at least 3 lines with that function using a loop.
 
 function drawALine(x, y) {
-	ctx.strokeStyle = 'lime';
-	ctx.beginPath();
-	ctx.moveTo(x, y);
-	ctx.lineTo(x + 50, y);
-	ctx.stroke();
+  ctx.strokeStyle = 'lime';
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(x + 50, y);
+  ctx.stroke();
 }
 
 let numOfLines = 3;
 
 for (let i = 1; i <= numOfLines; i++) {
-	drawALine(i * 100, i * 100);
+  drawALine(i * 100, i * 100);
 }
