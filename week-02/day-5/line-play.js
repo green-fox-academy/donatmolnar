@@ -21,22 +21,8 @@ for (let i = 0; i <= numOfLines; i++) {
 }
 
 for (let i = 0; i <= numOfLines; i++) {
-    ctx.strokeStyle = 'lime';
-    let hCount = numOfLines;
-    drawALine(hCount * i, numOfLines * 20, 0, i * 20);
-    hCount++;
-  }
-
-/*
-  for (let i = 0; i <= 20; i++) {
-    drawALine(0, i * 20);
-  }
-  
-  for (let i = 0; i <= 30; i++) {
-    drawALine(i * 20, 400);
-  }
-  
-  for (let i = 0; i <= 20; i++) {
-    drawALine(600, i * 20);
-  }
-  */
+  ctx.strokeStyle = 'lime';
+  let hCount = numOfLines;
+  drawALine(hCount * i, numOfLines * 20, 0, i * 20);
+  hCount++;
+}

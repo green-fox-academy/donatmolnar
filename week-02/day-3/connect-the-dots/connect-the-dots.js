@@ -21,11 +21,20 @@ function connect(x, y, z, z1) {
   ctx.lineTo(z, z1);
   ctx.stroke();
 }
+
+for (let i = 0; i <= dots.length; i++) {
+  connect(dots[i][0], dots[i][1], dots[i + 1][0], dots[i + 1][1]);
+  if (i = dots.length) {
+    connect(dots[i + 1][0], dots[i+1][1], dots[0][0], dots[0][1]);
+  }
+}
+
+
 //for ciklus
-connect(dots[0][0], dots[0][1], dots[1][0], dots[1][1]);
-connect(dots[1][0], dots[1][1], dots[2][0], dots[2][1]);
-connect(dots[2][0], dots[2][1], dots[3][0], dots[3][1]);
-connect(dots[3][0], dots[3][1], dots[0][0], dots[0][1]);
+//connect(dots[0][0], dots[0][1], dots[1][0], dots[1][1]);
+//connect(dots[1][0], dots[1][1], dots[2][0], dots[2][1]);
+//connect(dots[2][0], dots[2][1], dots[3][0], dots[3][1]);
+//connect(dots[3][0], dots[3][1], dots[0][0], dots[0][1]);
  /* 
     0     1  x
  0 [[10, 10], 
