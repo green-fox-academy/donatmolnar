@@ -39,7 +39,3 @@ console.log(myMap['100'] !== undefined);
 //remove all key-value pairs
 myMap = {};
 console.log(myMap);
-
-
-
-
