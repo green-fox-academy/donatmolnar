@@ -15,8 +15,8 @@ export class Counter {
     return (this._number += number);
   }
 
-  get(): string {
-    return this._number.toString();
+  get(): number {
+    return this._number;
   }
 
   reset(): void {
