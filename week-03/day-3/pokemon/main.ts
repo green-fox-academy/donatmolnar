@@ -1,6 +1,6 @@
 'use strict';
 
-import { Pokemon } from './pokemon'
+import { Pokemon } from './pokemon';
 
 let pokemonOfAsh: Pokemon[] = initializePokemon();
 
@@ -15,26 +15,27 @@ let wildPokemon: Pokemon = new Pokemon('Oddish', 'leaf', 'water');
 // Which pokemon should Ash use?
 
 // Implement the following `chooseEffective` function which will choose the most effective pokemon for Ash
-function chooseEffective(pokemonOfAsh, wildPokemon) {
-  if (wildPokemon.type === 'leaf') {
-    return Object.keys(pokemonOfAsh);
-    
-  } else if (wildPokemon.type === 'electric') {
-
-  } else if (wildPokemon.type === 'fire') {
-
-  } else if (wildPokemon.type === 'water') {
+function chooseEffective(myPokemon: Pokemon[], opponentPokemon: Pokemon) {
+  for (let i: number = 0; i < myPokemon.length; i++) {
+    if (
+      myPokemon[i].isEffectiveAgainst(opponentPokemon) &&
+      opponentPokemon.effectiveAgainst !== myPokemon[i].type
+    ) {
+      return myPokemon[i].name;
+    } else {
+      return 'BAD LUCK';
+    }
   }
 }
 
-console.log(`I choose you!, ${chooseEffective(pokemonOfAsh, wildPokemon)}`);
+console.log(`I choose you, ${chooseEffective(pokemonOfAsh, wildPokemon)}!`);
 
 function initializePokemon(): Pokemon[] {
-    return [
-        new Pokemon('Balbasaur', 'leaf', 'water'),
-        new Pokemon('Pikatchu', 'electric', 'water'),
-        new Pokemon('Charizard', 'fire', 'leaf'),
-        new Pokemon('Balbasaur', 'water', 'fire'),
-        new Pokemon('Kingler', 'water', 'fire')
-    ];
+  return [
+    new Pokemon('Balbasaur', 'leaf', 'water'),
+    new Pokemon('Pikatchu', 'electric', 'water'),
+    new Pokemon('Charizard', 'fire', 'leaf'),
+    new Pokemon('Balbasaur', 'water', 'fire'),
+    new Pokemon('Kingler', 'water', 'fire'),
+  ];
 }
