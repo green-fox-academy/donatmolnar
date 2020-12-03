@@ -1,30 +1,18 @@
 'use strict';
 
 class Student {
-  _teacher;
-
-  constructor() {
-    this._teacher = new Teacher();
-  }
-
   learn() {
     console.log('Student is learning something new.');
   }
 
-  question(_teacher) {
-    return this._teacher.answer();
+  question(teacher: Teacher) {
+    return teacher.answer();
   }
 }
 
 class Teacher {
-  _student;
-
-  constructor() {
-    this._student = new Student();
-  }
-
-  teach(student) {
-    return this._student.learn();
+  teach(student: Student) {
+    return student.learn();
   }
 
   answer() {
