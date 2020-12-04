@@ -4,11 +4,15 @@
 //compute recursively (no loops) the value of base to the n power, 
 //so powerN(3, 2) is 9 (3 squared).
 
+let counter: number = 1;
+
 function powerN(base: number, n: number) {
-  if (base <= 1 && n <= 1) {
-    return 1;
+  if (n < 1) {
+    return counter;
   }
-  return n * powerN(base, n - 1);
+  counter *= base;
+  n--;
+  return powerN(base, n);
 }
 
-powerN(2, 3);
+console.log(powerN(2, 10));
