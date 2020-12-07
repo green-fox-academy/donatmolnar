@@ -6,21 +6,21 @@ export class Student extends Person {
   protected _previousOrganization: string;
   protected _skippedDays: number;
 
-constructor (name: string, age: number, gender: string, previousOrganization: string, skippedDays?: number) { 
-  super(name, age, gender);
-  if (name === undefined && age === undefined && gender === undefined && previousOrganization === undefined) {
-    this._name = 'Jane Doe';
-    this._age = 30;
-    this._gender = 'female';
-    this._previousOrganization = 'The School of Life'
-  } else {
+  constructor(
+    name?: string,
+    age?: number,
+    gender?: string,
+    previousOrganization?: string,
+    skippedDays?: number
+  ) {
+    super(name, age, gender);
     this._name = name;
     this._age = age;
     this._gender = gender;
     this._previousOrganization = previousOrganization;
-    this._skippedDays = 0;
+    this._skippedDays = skippedDays ?? 0;
+    this._previousOrganization = previousOrganization ?? 'The School of Life';
   }
-}
 
   public introduce(): void {
     console.log(`Hi, I'm ${this._name}, a ${this._age} year old ${this._gender} 

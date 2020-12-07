@@ -3,12 +3,12 @@
 import { Student } from './student';
 import { Mentor } from './mentor';
 
-export class Cohor {
+export class Cohort {
   protected _name: string;
   protected _students: string[];
   protected _mentors: string[];
 
-  constructor(name: string) {
+  constructor(name?: string) {
     this._name = name;
     this._students = [];
     this._mentors = [];
