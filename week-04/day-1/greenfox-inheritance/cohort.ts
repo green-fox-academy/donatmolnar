@@ -23,7 +23,7 @@ export class Cohort {
   }
 
   public info(): void {
-    console.log(`The ${this._name} cohort has size of ${this._students} students 
-    and size of ${this._mentors} mentors.`);
+    console.log(`The ${this._name} cohort has size of ${this._students.length} students 
+    and size of ${this._mentors.length} mentors.`);
   }
 }

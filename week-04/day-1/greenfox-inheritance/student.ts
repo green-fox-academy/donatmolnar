@@ -14,9 +14,6 @@ export class Student extends Person {
     skippedDays?: number
   ) {
     super(name, age, gender);
-    this._name = name;
-    this._age = age;
-    this._gender = gender;
     this._previousOrganization = previousOrganization;
     this._skippedDays = skippedDays ?? 0;
     this._previousOrganization = previousOrganization ?? 'The School of Life';
