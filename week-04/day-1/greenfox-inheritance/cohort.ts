@@ -5,8 +5,8 @@ import { Mentor } from './mentor';
 
 export class Cohort {
   protected _name: string;
-  protected _students: string[];
-  protected _mentors: string[];
+  protected _students: Student[];
+  protected _mentors: Mentor[];
 
   constructor(name?: string) {
     this._name = name;
@@ -15,20 +15,15 @@ export class Cohort {
   }
 
   public addStudent(student: Student): void {
-    this._students.push();
+    this._students.push(student);
   }
 
   public addMentor(mentor: Mentor): void {
-    this._mentors.push();
+    this._mentors.push(mentor);
   }
 
-  info(): void {
+  public info(): void {
     console.log(`The ${this._name} cohort has size of ${this._students} students 
     and size of ${this._mentors} mentors.`);
   }
-/*
-addStudent(Student): adds the given Student to students list
-addMentor(Mentor): adds the given Mentor to mentors list
-info(): prints out 'The name cohort has size of students students and size of mentors mentors.'*/
-
 }
