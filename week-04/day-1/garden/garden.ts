@@ -10,18 +10,18 @@ export class Garden {
   }
 
   public waterAll(amountAtDisposal: number): void {
-    let dryPlants: Plant[] = this._plants.filter(plant => plant.needsWatering() === true);
+    let dryPlants: Plant[] = this._plants.filter(
+      (plant) => plant.needsWatering() === true
+    );
     let waterForEachPlant: number = amountAtDisposal / dryPlants.length;
 
     console.log(`Watering with ${amountAtDisposal}`);
 
     dryPlants.forEach((plant: Plant) => plant.water(waterForEachPlant));
-    
   }
 
   public printAll(): void {
     this._plants.forEach((plant: Plant) => plant.printInfo());
     console.log('\n');
-    
   }
 }

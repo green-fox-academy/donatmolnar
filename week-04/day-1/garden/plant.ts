@@ -7,7 +7,12 @@ export class Plant {
   protected _plantType: string;
   protected _color: string;
 
-  constructor(absorptionRate: number, criticalWaterLevel: number, color: string, plantType: string) {
+  constructor(
+    absorptionRate: number,
+    criticalWaterLevel: number,
+    color: string,
+    plantType: string
+  ) {
     this._absorptionRate = absorptionRate;
     this._criticalWaterLevel = criticalWaterLevel;
     this._plantType = plantType;
@@ -24,6 +29,6 @@ export class Plant {
   }
 
   public printInfo(): void {
-    console.log(`The ${this._color} ${this._plantType} ${this.needsWatering() === true ? 'needs' : 'doesn\'t need'} water.`);
+    console.log(`The ${this._color} ${this._plantType} ${this.needsWatering() === true ? 'needs' : "doesn't need"} water.`);
   }
 }
