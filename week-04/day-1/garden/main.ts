@@ -4,16 +4,20 @@ import { Flower} from './flower';
 import { Tree } from './tree';
 import { Garden } from './garden';
 
-let yellowFlower = new Flower ('yellow');
-let blueFlower = new Flower ('blue');
-let purpleTree = new Tree ('purple');
-let orangeTree = new Tree ('orange');
+let myGarden = new Garden();
 
-let myGarden = new Garden ();
+let yellow = new Flower ('yellow');
+let blue = new Flower ('blue');
+let purple = new Tree ('purple');
+let orange = new Tree ('orange');
 
-myGarden.addFlower(yellowFlower);
-myGarden.addFlower(blueFlower);
-myGarden.addTree(purpleTree);
-myGarden.addTree(orangeTree);
+myGarden.addPlant(yellow);
+myGarden.addPlant(blue);
+myGarden.addPlant(purple);
+myGarden.addPlant(orange);
 
-
+myGarden.printAll();
+myGarden.waterAll(40);
+myGarden.printAll();
+myGarden.waterAll(70);
+myGarden.printAll();

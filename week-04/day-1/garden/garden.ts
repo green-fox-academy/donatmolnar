@@ -1,23 +1,27 @@
 'use strict';
 
-import { Flower } from './flower';
-import { Tree } from './tree';
+import { Plant } from './plant';
 
 export class Garden {
-  protected _numberOfPlants: number;
-  protected _flowers: Flower[];
-  protected _trees: Tree[];
+  private _plants: Plant[] = [];
 
-  constructor() {
-    this._flowers = [];
-    this._trees = [];
-  }
- 
-  public addFlower(flower: Flower): void {
-    this._flowers.push(flower);
+  public addPlant(newPlant: Plant): void {
+    this._plants.push(newPlant);
   }
 
-  public addTree(tree: Tree): void {
-    this._trees.push(tree);
+  public waterAll(amountAtDisposal: number): void {
+    let dryPlants: Plant[] = this._plants.filter(plant => plant.needsWatering() === true);
+    let waterForEachPlant: number = amountAtDisposal / dryPlants.length;
+
+    console.log(`Watering with ${amountAtDisposal}`);
+
+    dryPlants.forEach((plant: Plant) => plant.water(waterForEachPlant));
+    
+  }
+
+  public printAll(): void {
+    this._plants.forEach((plant: Plant) => plant.printInfo());
+    console.log('\n');
+    
   }
 }
