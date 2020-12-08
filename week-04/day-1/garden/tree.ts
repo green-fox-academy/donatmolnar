@@ -10,11 +10,11 @@ export class Tree {
     this._waterAmount = 0;
   }
 
-  getWater(amount: number): void {
+  public addWater(amount: number): void {
     this._waterAmount += amount * 0.4;
   }
 
-  needWater(): boolean {
+  public needWater(): boolean {
     if (this._waterAmount < 10) {
        return true;
     } else {

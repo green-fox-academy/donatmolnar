@@ -10,7 +10,7 @@ export class Flower {
     this._waterAmount = 0;
   }
 
-  public getWater(amount: number): void {
+  public addWater(amount: number): void {
     this._waterAmount += amount * 0.75;
   }
 

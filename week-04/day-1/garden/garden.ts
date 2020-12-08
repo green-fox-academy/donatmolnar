@@ -13,5 +13,11 @@ export class Garden {
     this._trees = [];
   }
  
+  public addFlower(flower: Flower): void {
+    this._flowers.push(flower);
+  }
 
+  public addTree(tree: Tree): void {
+    this._trees.push(tree);
+  }
 }
