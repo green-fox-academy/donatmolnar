@@ -1,10 +1,8 @@
 'use strict';
 
-import { ElectricGuitar} from './electric-guitar';
+import { ElectricGuitar } from './electric-guitar';
 import { BassGuitar } from './bass-guitar';
 import { Violin } from './violin';
-
-
 
 console.log(
   'Test 1, create Electric Guitar, Bass Guitar and Violin with default strings.'
