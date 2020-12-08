@@ -3,7 +3,7 @@
 import { Plant } from './plant';
 
 export class Garden {
-  private _plants: Plant[] = [];
+  protected _plants: Plant[] = [];
 
   public addPlant(newPlant: Plant): void {
     this._plants.push(newPlant);

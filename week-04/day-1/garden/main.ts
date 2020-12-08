@@ -4,7 +4,7 @@ import { Flower } from './flower';
 import { Tree } from './tree';
 import { Garden } from './garden';
 
-let myGarden = new Garden();
+let myGarden = new Garden;
 
 let yellow = new Flower('yellow');
 let blue = new Flower('blue');
