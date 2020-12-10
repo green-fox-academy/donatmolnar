@@ -11,11 +11,11 @@
 
 const fs3 = require('fs');
 
-function writeMultipleLines(path: string, word: string, number: number) {
-    try {
-        let file = fs3.writeFileSync(path, word + '\n');
-
-    } catch {
-
-    }
+try {
+function writeMultipleLines(path: string, word: string, num: number) {
+    let file = fs3.writeFileSync(path, word + '\n');
+    console.log(i); 
+  }
+} catch (e) {
+  console.log(e);
 }
