@@ -56,3 +56,13 @@ console.log("------------------");
 
 diceSet.reroll(4);
 console.log(diceSet.getCurrent());
+
+let rollNumber: number = 0;
+for (let i: number = 0; i < diceSet.numOfDices; i++) {
+  while(diceSet.getCurrent(i) !== 6) {
+    diceSet.reroll(i);
+    rollNumber++;
+  }
+}
+
+console.log(diceSet.getCurrent());

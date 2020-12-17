@@ -3,7 +3,7 @@
 //Given a non-negative integer n, 
 //return the sum of its digits recursively (without loops).
 
-let count = 0;
+let count: number = 0;
 
 function sumDigit(n: number): number {
   if (n <= 1) {

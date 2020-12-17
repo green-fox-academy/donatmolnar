@@ -6,8 +6,10 @@
 //   a loop
 // - It should print: ['GinGin', 'WhiskeyWhiskey', 'WineWine', 'BeerBeer']`
 
-let drinks = ['Gin', 'Whiskey', 'Wine', 'Beer'];
+let drinks: string[] = ['Gin', 'Whiskey', 'Wine', 'Beer'];
 
-drinks.forEach(function (value): void {
-  console.log(value + value);
-});
+//drinks.forEach((value, index): string => {return drinks[index] += drinks[index]});
+
+let drinksDouble = drinks.map(drinks => drinks + drinks);
+
+console.log(drinksDouble);

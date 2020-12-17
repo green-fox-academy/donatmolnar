@@ -11,11 +11,14 @@
 
 const fs3 = require('fs');
 
-try {
-function writeMultipleLines(path: string, word: string, num: number) {
-    let file = fs3.writeFileSync(path, word + '\n');
-    console.log(i); 
+function writeMultipleLines(path: string, word: string, num: number): void {
+  for (let i: number = 0; i < num; i++) {
+    try {
+      fs3.appendFileSync(path, '\n' + word)
+    } catch (e) {
+      console.log(e);
+    }
   }
-} catch (e) {
-  console.log(e);
 }
+
+writeMultipleLines('my-file.txt', 'apple', 5);
