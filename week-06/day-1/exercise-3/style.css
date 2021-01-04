@@ -1,0 +1,26 @@
+.container {
+  background: goldenrod;
+  width: 30em;
+  height: 20em;
+  padding: 0px;
+  display: flex;
+  
+  /* Exercise 3.1
+  align-items: center;
+  
+  Exercise 3.2
+  justify-content: space-between;
+  align-items: center;
+  */
+  
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.item {
+  background: purple;
+  width: 5em;
+  height: 5em;
+  list-style: none;
+  margin: 3px;
+}
