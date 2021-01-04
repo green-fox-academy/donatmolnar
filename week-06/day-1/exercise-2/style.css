@@ -1,0 +1,15 @@
+.container {
+  background: goldenrod;
+  width: 30em;
+  height: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.purple {
+  background: purple;
+  width: 5em;
+  height: 5em;
+}
+
