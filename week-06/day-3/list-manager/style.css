@@ -1,0 +1,26 @@
+body {
+  /*background: lightgray;*/
+  display: flex;
+  justify-content: space-around;
+}
+
+ul {
+  list-style: none;
+}
+
+#list, #selected {
+  background: lightgreen;
+  padding: 0 10px;
+  border: 1px solid lime;
+  width: 100px;
+}
+
+#buttons {
+  padding: 0 10px;
+}
+
+#Up, #Down, #Move, #X {
+  display: block;
+  color: black;
+  width: 80px;
+}
