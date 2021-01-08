@@ -43,6 +43,32 @@ const images = [
   },
 ]
 
+// set default image, title and subtitle
+let selected = 0;
+setAll(selected);
+
+//next button
+const next = document.getElementById('next');
+next.onclick = () => {
+  if (selected < images.length -1) {
+    selected++;
+  } else {
+    selected = 0;
+  }
+  setAll(selected);
+};
+
+//prev button
+const prev = document.getElementById('prev');
+prev.onclick = () => {
+  if (selected > 0) {
+    selected--;
+  } else {
+    selected = images.length - 1;
+  }
+  setAll(selected);
+};
+
 // adds the thumbnails
 const thumb = document.getElementById('thumb');
 
@@ -54,16 +80,28 @@ images.forEach((element) => {
   thumb.appendChild(item);
 });
 
-// sets the default image
-let selected = images[1];
-const player = document.getElementById('player');
-player.setAttribute(`style`, `background-image: url(${selected.src});`);
+// sets the image
+function setImage(selected) {
+  const player = document.getElementById('player');
+  player.setAttribute(`style`, `background-image: url(${images[selected].src});`);
+}
 
 // sets the title
-const title = document.getElementById('title');
-title.textContent = `${selected.title}`;
+function setTitle(selected) {
+  const title = document.getElementById('title');
+  title.textContent = `${images[selected].title}`;
+}
 
-//sets the subtitle
-const subtitle = document.getElementById('subtitle');
-subtitle.innerHTML = `${selected.sub}`;
+// sets the subtitle
+function setSub(selected) {
+  const subtitle = document.getElementById('subtitle');
+  subtitle.innerHTML = `${images[selected].sub}`;
+}
+
+// sets selected image, title and subtitle
+function setAll(selected) {
+  setImage(selected);
+  setTitle(selected);
+  setSub(selected);
+}
 
