@@ -95,7 +95,7 @@ function setImage(selected) {
     `style`,
     `background-image: url(${images[selected].src});`
   );
-}
+};
 
 // sets the title
 function setTitle(selected) {
@@ -114,4 +114,4 @@ function setAll(selected) {
   setImage(selected);
   setTitle(selected);
   setSub(selected);
-}
+};
