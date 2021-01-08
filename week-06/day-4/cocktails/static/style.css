@@ -1,5 +1,6 @@
 body {
   font-family: 'Quicksand', sans-serif;
+  margin: 1%;
 }
 
 h1 {
@@ -10,6 +11,24 @@ a {
   text-transform: uppercase;
 }
 
-li {
-  list-style: none;
+tr:nth-child(even) {
+  background-color: lightgray;
+}
+
+tr:hover {
+  background-color: lightgoldenrodyellow;
+}
+
+th {
+  color: white;
+  background-color: black;
+}
+
+#name {
+  width: 80%;
+}
+
+.price {
+  width: 20%;
+  text-align: center;
 }

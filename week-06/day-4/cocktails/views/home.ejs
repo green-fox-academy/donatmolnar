@@ -10,21 +10,23 @@
 </head>
 <body>
   <h1>Cocktails</h1>
+  <a href="localhost:3000">All</a>
   <% for (let i = 0; i < alcohol.length; i++) { %>
     <a href="localhost:3000"><%= alcohol[i] %></a>
-    <% }; %>
-    
-    <ul>
-      <% for (let i = 0; i < cocktails.length; i++) { %>
-        <li><%= cocktails[i].name  %></li>
-        <li><%= cocktails[i].contains  %></li>
-        <li><%= cocktails[i].price  %> Ft</li>
-        <li>Alcoholic: <%= cocktails[i].isAlcoholic  %></li>
-        <% }; %>
-    </ul>
-    
-    <%                      %>
-    <%                      %>
-    <%                      %>
+  <% }; %>
+  <table style="width: 40%">
+    <tr>
+      <th id="name">NAME</th>
+      <th class="price">PRICE</th>
+    </tr>
+
+  <% for (let i = 0; i < cocktails.length; i++) { %>
+    <tr>
+        <td><strong><%= cocktails[i].name %></strong> <% if (cocktails[i].isAlcoholic == false) { %><%= `(non-alcoholic)` %><% } else {} %><br/><%= `\n ${cocktails[i].contains}` %></td>
+        <td class="price"><strong><%= cocktails[i].price %> Ft</strong></td>
+    </tr>
+  <% }; %>
+  </table>
+
 </body>
 </html>
