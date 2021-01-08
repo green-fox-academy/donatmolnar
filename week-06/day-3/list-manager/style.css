@@ -24,3 +24,8 @@ ul {
   color: black;
   width: 80px;
 }
+
+.active {
+  background: limegreen;
+  padding: 0 10px;
+}

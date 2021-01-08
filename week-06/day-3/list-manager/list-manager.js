@@ -24,7 +24,7 @@ let shoppingList = ['bread', 'milk', 'orange', 'tomato'];
 shoppingList.forEach((element) => {
   let item = document.createElement('li');
   item.textContent = element;
-  item.className = element;
+  item.id = element;
   list.appendChild(item);
 });
 
@@ -51,16 +51,44 @@ body.appendChild(selected);
 
 // selection handling
 
+function activate(item) {
+  let act = document.getElementById(`${shoppingList[item]}`);
+  act.setAttribute('class', 'active');
+}
+
+function deactivate(item) {
+  let deact = document.getElementById(`${shoppingList[item]}`);
+  deact.setAttribute('class', '');
+};
+
+let active = 0;
+activate(active);
 
 // onclick functions
 const up = document.getElementById('Up')
 up.onclick = () => {
- alert('selection up');
+  if (active == 0) {
+    deactivate(0);
+    active = shoppingList.length - 1
+    activate(active);
+  } else {
+    deactivate(active);
+    active--;
+    activate(active);
+  }
 };
 
 const down = document.getElementById('Down')
 down.onclick = () => {
- alert('selection down');
+  if (active == shoppingList.length - 1) {
+    deactivate(active);
+    active = 0;
+    activate(active);
+  } else {
+    deactivate(active);
+    active++;
+    activate(active);
+  }
 };
 
 const move = document.getElementById('Move')
