@@ -4,7 +4,7 @@ const images = [
   {
     title: 'Space-1',
     sub: 'General description of the image above',
-    src: './src/space-1.jpg'
+    src: './src/space-1.jpg',
   },
   {
     title: 'Space-2',
@@ -39,18 +39,18 @@ const images = [
   {
     title: 'Space-8',
     sub: 'General description of the image above',
-    src: './src/space-8.png'
+    src: './src/space-8.png',
   },
-]
+];
 
-// set default image, title and subtitle
+// sets default image, title and subtitle
 let selected = 0;
 setAll(selected);
 
 //next button
 const next = document.getElementById('next');
 next.onclick = () => {
-  if (selected < images.length -1) {
+  if (selected < images.length - 1) {
     selected++;
   } else {
     selected = 0;
@@ -76,14 +76,25 @@ images.forEach((element) => {
   let item = document.createElement('img');
   item.src = element.src;
   item.title = element.title;
-  item.className = "thumbItem";
+  item.className = 'thumbItem';
   thumb.appendChild(item);
+});
+
+// thumbnail onclick feature
+const thumbnails = document.querySelectorAll('img');
+thumbnails.forEach((element, i) => {
+  thumbnails[i].onclick = () => {
+    setAll(i - 2);
+  };
 });
 
 // sets the image
 function setImage(selected) {
   const player = document.getElementById('player');
-  player.setAttribute(`style`, `background-image: url(${images[selected].src});`);
+  player.setAttribute(
+    `style`,
+    `background-image: url(${images[selected].src});`
+  );
 }
 
 // sets the title
@@ -104,4 +115,3 @@ function setAll(selected) {
   setTitle(selected);
   setSub(selected);
 }
-
