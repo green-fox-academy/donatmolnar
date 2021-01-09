@@ -43,33 +43,41 @@ buttonList.forEach((element) => {
   buttons.appendChild(item);
 });
 
- 
 // creates selected list element
-const selected = document.createElement('ul');
-selected.id = 'selected';
-body.appendChild(selected);
+const createSelectedList = document.createElement('ul');
+createSelectedList.id = 'selected';
+body.appendChild(createSelectedList);
+const selectedList = document.getElementById(`selected`);
 
 // selection handling
 
 function activate(item) {
-  let act = document.getElementById(`${shoppingList[item]}`);
-  act.setAttribute('class', 'active');
+  if (shoppingList[item] === null || shoppingList[item] === undefined) {
+    alert('List has been eptied.');
+  } else {
+    let act = document.getElementById(`${shoppingList[item]}`);
+    act.setAttribute('class', 'active');
+  }
 }
 
 function deactivate(item) {
-  let deact = document.getElementById(`${shoppingList[item]}`);
-  deact.setAttribute('class', '');
-};
+  if (shoppingList[item] === null || shoppingList[item] === undefined) {
+    alert('List has been emptied.');
+  } else {
+    let deact = document.getElementById(`${shoppingList[item]}`);
+    deact.setAttribute('class', '');
+  }
+}
 
 let active = 0;
 activate(active);
 
 // onclick functions
-const up = document.getElementById('Up')
+const up = document.getElementById('Up');
 up.onclick = () => {
   if (active == 0) {
     deactivate(0);
-    active = shoppingList.length - 1
+    active = shoppingList.length - 1;
     activate(active);
   } else {
     deactivate(active);
@@ -78,7 +86,7 @@ up.onclick = () => {
   }
 };
 
-const down = document.getElementById('Down')
+const down = document.getElementById('Down');
 down.onclick = () => {
   if (active == shoppingList.length - 1) {
     deactivate(active);
@@ -91,14 +99,22 @@ down.onclick = () => {
   }
 };
 
-const move = document.getElementById('Move')
+const move = document.getElementById('Move');
 move.onclick = () => {
- alert('selection Move');
+  let act = document.getElementsByClassName('active');
+  let item = document.createElement('li');
+  item.textContent = act[0].textContent;
+  item.id = act[0].id;
+  selectedList.appendChild(item);
+  shoppingList.splice(shoppingList.indexOf(act[0].id), 1);
+  list.removeChild(act[0]);
+  activate(0);
 };
 
-const remove = document.getElementById('X')
+const remove = document.getElementById('X');
 remove.onclick = () => {
- alert('selection Remove');
+  let act = document.getElementsByClassName('active');
+  shoppingList.splice(shoppingList.indexOf(act[0].id), 1);
+  list.removeChild(act[0]);
+  activate(0);
 };
-
-
