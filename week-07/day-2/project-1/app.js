@@ -37,4 +37,9 @@ app.get('/greeter', (req,res) => {
   }
 });
 
+app.get('/appenda/:appendable', (req,res) => {
+  let appended = req.params.appendable + 'a';
+  res.json({'appended': `${appended}`})
+});
+
 app.listen(3000);
