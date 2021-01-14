@@ -22,6 +22,7 @@ app.get('/', (req,res) => {
   res.json({Status: "Connection established: postman has been reached by the server"});
 });
 
+// sends an array of titles in a JSON
 app.get('/titles', (req,res) => {
   conn.query('SELECT * FROM book_mast;', (err, rows) => {
     if (err) {
@@ -33,9 +34,11 @@ app.get('/titles', (req,res) => {
     rows.forEach((element) => {
       titles.push(element.book_name);
     });
-    res.json({titles});
+    res.json(titles);
   });
 });
+
+
 
 
 app.listen(3000);
