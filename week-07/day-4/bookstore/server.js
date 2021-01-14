@@ -13,3 +13,8 @@ let conn = mysql.createConnection({
   database: 'bookstore'
 });
 
+conn.connect((err) => {
+  if (err) trhow (err);
+  console.log('Connected to mysql');
+});
+
