@@ -4,16 +4,18 @@ const express = require('express');
 const app = express();
 const mysql = require('mysql');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 app.use(express.json());
 app.use(express.static('assets'));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 let conn = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'password',
-  database: 'bookstore'
+  database: 'bookstore',
 });
 
 conn.connect((err) => {
@@ -23,6 +25,7 @@ conn.connect((err) => {
 
 app.get('/', (req,res) => {
   res.json({Status: "Connection established: postman has been reached by the server"});
+  res.sendFile('index.html')
 });
 
 let category = '';
@@ -70,9 +73,10 @@ app.get('/books', (req,res) => {
       res.status(500).json({error: 'error during reading sql db'})
       return;
     }
-    //res.sendFile(path.join(__dirname, '/assets/index.html'));
-    res.json(rows);
+    res.json(rows); // must to be inside conn.query
   });
+    //res.sendFile('index.html'); 
+    //res.sendFile(path.join(__dirname, 'assets/index.html'));
 });
 
 app.listen(3000);
