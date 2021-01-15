@@ -5,19 +5,19 @@ window.onload = () => {
   bookRequest.open('GET', 'http://localhost:3000/books' );
   bookRequest.send();
 
-  bookRequest.onload = (response) => {
-    let resultObject = JSON.parse(response.target.response);
-    console.log(resultObject[0].book_name);
+  bookRequest.onload = (element) => {
+    let resultObject = JSON.parse(element.target.response);
     resultObject.forEach(book => {
-      const exampleDiv = document.getElementById('example');
-      exampleDiv.appendChild(createBookUL(book));
+      const table = document.getElementById('table1');
+      table.appendChild(createBookRow(book));
     });
   };
 }
 
-const createBookUL = (bookObject) => {
-  let currentBook = document.createElement('p');
+const createBookRow = (bookObject) => {
+  let createdRow = document.createElement('tr');
+  let currentBook = document.createElement('td');
   currentBook.textContent = bookObject.book_name;
-  currentBook.classList.add('book');
-  return currentBook;
+  createdRow.appendChild(currentBook);
+  return createdRow;
 }

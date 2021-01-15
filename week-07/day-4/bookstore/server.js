@@ -3,12 +3,12 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql');
-const path = require('path');
-const bodyParser = require('body-parser');
+//const path = require('path'); //res.sendFile(path.join(__dirname, 'assets/index.html'));
+
 
 app.use(express.json());
 app.use(express.static('assets'));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); //csak amikor html-form-ból jön az adat és nem json-ben req.bodyban.
 
 
 let conn = mysql.createConnection({
@@ -46,13 +46,13 @@ app.get('/books', (req,res) => {
     publisher = `%${req.query.publisher}%`;
   }
 
-  if (req.query.plt === undefined || req.query.pgt === NaN) {
-    plt = 999999999;
+  if (req.query.plt === undefined) {
+    plt = 99999999;
   } else {
     plt = req.query.plt;
   }
 
-  if (req.query.pgt === undefined || req.query.pgt === NaN) {
+  if (req.query.pgt === undefined) {
     pgt = 0;
   } else {
     pgt = req.query.pgt;
