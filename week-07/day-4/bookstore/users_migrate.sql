@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `first_name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
   `last_name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
   `address` varchar(50) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
-  `height` decimal(8,1) NOT NULL DEFAULT '0.00',
+  `height` decimal(8,1) NOT NULL DEFAULT '0.0',
   `bitcoin_address` varchar(200) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
   `color_preference` varchar(8) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
