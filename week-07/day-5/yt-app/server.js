@@ -3,8 +3,11 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql');
+const bodyParser = require('body-parser')
+
 app.use(express.json());
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 const conn = mysql.createConnection({
@@ -12,7 +15,7 @@ const conn = mysql.createConnection({
   user: 'root',
   password: 'password',
   database: 'ytsongs',
-  insecureAuth: 'ture',
+  insecureAuth: 'true',
 });
 
 conn.connect((err) => {
@@ -44,17 +47,9 @@ app.post('/addsong', (req, res) => {
         res.status(500).json(err);
         return;
       }
-      res.send('Sikerult');
+      res.redirect('/');
     }
   );
 });
 
 app.listen(3000);
-
-// mysql> CREATE TABLE `songs` (
-// -> `id` INT NOT NULL AUTO_INCREMENT,
-// -> `title` VARCHAR(256) NOT NULL,
-// -> `artist` VARCHAR(256) NOT NULL,
-// -> `url` VARCHAR(256) NOT NULL,
-// -> PRIMARY KEY (`id`)
-// -> );
