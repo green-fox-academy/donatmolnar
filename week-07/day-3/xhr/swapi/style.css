@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
 body {
   background: black;
   color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: x-large;
+  background-image: url('https://i.ytimg.com/vi/dqoHcfMn6Ck/maxresdefault.jpg');
+  padding: 0 0 0 30px;
 }
 
 h1 {
@@ -10,4 +16,8 @@ h1 {
 button {
   background: gold;
   border-radius: 10px;
+  color: black;
+  display: block;
+  margin: 10px 0;
+  height: 40px;
 }
