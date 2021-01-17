@@ -1,0 +1,13 @@
+body {
+  background: black;
+  color: white;
+}
+
+h1 {
+  color: gold;
+}
+
+button {
+  background: gold;
+  border-radius: 10px;
+}
