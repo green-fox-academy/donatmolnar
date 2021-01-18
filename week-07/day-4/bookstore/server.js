@@ -6,11 +6,11 @@ const mysql = require('mysql');
 //const path = require('path'); //res.sendFile(path.join(__dirname, 'assets/index.html'));
 
 
-app.use(express.json());
-app.use(express.static('assets'));
+app.use(express.json()); //replaces body-parser
+app.use(express.static('assets')); // makes assest folder publicly available
 app.use(express.urlencoded({ extended: true })); //csak amikor html-form-ból jön az adat és nem json-ben req.bodyban.
 
-
+// connects to the mysql database
 let conn = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -18,6 +18,7 @@ let conn = mysql.createConnection({
   database: 'bookstore',
 });
 
+// checks connection to mysql
 conn.connect((err) => {
   if (err) throw err;
   console.log('Connected to mysql');
@@ -33,30 +34,18 @@ let publisher ='';
 let plt = 0;
 let pgt = 0;
 
+// filters the results
 app.get('/books', (req,res) => {
-  if (req.query.category === undefined) {
-    category = '%';
-  } else {
-    category = `%${req.query.category}%`;
-  }
 
-  if (req.query.publisher === undefined) {
-    publisher = '%';
-  } else {
-    publisher = `%${req.query.publisher}%`;
-  }
+  let cat = req.query.category;
+  cat === undefined ? category = '%' : category = `%${cat}%`;
 
-  if (req.query.plt === undefined) {
-    plt = 99999999;
-  } else {
-    plt = req.query.plt;
-  }
+  let pub = req.query.publisher;
+  pub === undefined ? publisher = '%' : publisher = `%${pub}%`;
 
-  if (req.query.pgt === undefined) {
-    pgt = 0;
-  } else {
-    pgt = req.query.pgt;
-  }
+  req.query.plt === undefined ? plt = 99999999 : plt = req.query.plt;
+
+  req.query.pgt === undefined ? pgt = 0 : pgt = req.query.pgt;
 
   conn.query(
     `SELECT book_name, aut_name, cate_descrip, pub_name, book_price
@@ -75,8 +64,6 @@ app.get('/books', (req,res) => {
     }
     res.json(rows); // must to be inside conn.query
   });
-    //res.sendFile('index.html'); 
-    //res.sendFile(path.join(__dirname, 'assets/index.html'));
 });
-
+  
 app.listen(3000);
