@@ -34,12 +34,13 @@ app.get('/posts', (req,res) => {
         res.status(500).json({error: 'error during writing sql db'})
         return;
       }
+      res.setHeader('Content-type', 'application/json');
       res.status(200).json(rows);
     });
 });
 
 // sends a single post based on id
-app.get('/posts/:id', (req,res) => {
+app.get(`/posts/:${id}`, (req,res) => {
   let id = req.params.id;
   conn.query(
     `SELECT * FROM posts WHERE is_active = true AND post_id = ?`, [id], (err, rows) => {
@@ -50,7 +51,8 @@ app.get('/posts/:id', (req,res) => {
       }
       res.status(200).json(rows);
     });
-});
+  });
+  
 
 // adds new post
 app.post('/posts', (req,res) => {
