@@ -8,7 +8,6 @@
 // - Display the candy producton rate in the `Candies / Second` row
 // - If you press the "make candy rain" button, the candy generation should speed up 10x
 
-
 // get the elements
 let candies = document.querySelector('.candies');
 let lollypops = document.querySelector('.lollypops');
@@ -19,7 +18,7 @@ let speed = document.querySelector('.speed');
 
 createCandies.addEventListener('click', () => {
   candies.textContent++;
-})
+});
 
 buyLollypops.addEventListener('click', () => {
   if (candies.textContent >= 10) {
@@ -30,5 +29,3 @@ buyLollypops.addEventListener('click', () => {
     10 candies = 1 lollypop`);
   }
 });
-
-
