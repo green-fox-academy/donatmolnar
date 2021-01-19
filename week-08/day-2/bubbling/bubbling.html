@@ -7,19 +7,38 @@
       html, body {
         margin: 0;
         padding: 0;
+        background-color: goldenrod;
       }
       nav {
         text-align: center;
       }
       button {
         margin: 16px;
+        border: 0 solid;
+        background-color: transparent;
+        box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+        outline: 1px solid;
+        outline-color: rgba(255, 255, 255, .5);
+        outline-offset: 0px;
+        text-shadow: none;
+        transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+        height: 30px;
+      } 
+      
+      button:hover {
+        border: 1px solid;
+        box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+        outline-color: rgba(255, 255, 255, 0);
+        outline-offset: 15px;
+        text-shadow: 1px 1px 2px #427388; 
       }
+
       .img-inspector {
         margin: 0 auto;
         width: 500px;
         height: 320px;
         border: 1px solid #3a3a3a;
-        background-image: url("../assets/mp.jpg");
+        background-image: url("./mp.jpg");
         background-size: 200%;
       }
     </style>
