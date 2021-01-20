@@ -8,13 +8,16 @@
 </head>
 <body>
   <div id="main">
-    <h2>ACCOUNT LOGIN</h2>
+    <p>ACCOUNT LOGIN</p>
     <form action="">
-      <label for="username">Username</label>
+      <label for="username">USERNAME</label>
       <input type="text" name="username">
-      <label for="password">Password</label>
-      <input type="password" name="password">
-      <a href="https://www.alz.org/">Forgot password</a>
+      <label for="password">PASSWORD</label>
+      <input type="password" name="password" onmousedown="this.type='text'"
+      onmouseup="this.type='password'"
+      onmousemove="this.type='password'">
+      <img src="visible.png" alt="visible">
+      <a href="https://www.alz.org/">Forgot password?</a>
       <button>Login</button>
     </form>
   </div>
