@@ -1,12 +1,30 @@
 'use strict';
 
-let scifi = ["Moon", "2001: A Space Odyssey", "Contact"]
-let drama = ["Darkest Hour", "There Will Be Blood", "American Beauty"]
-let comedy = ["Airplane!", "Deadpool", "Wayne's World"]
-
 let genre = document.getElementById('genre');
 let movie = document.getElementById('movie');
+let selectedP = document.getElementById('selected-movie');
+let scifi = document.querySelectorAll('.sci-fi');
+let drama = document.querySelectorAll('.drama');
+let comedy = document.querySelectorAll('.comedy');
 
 genre.addEventListener('change', (event) => {
-console.log(event);
+  let selectedGenre = event.target.value;
+
+  for (let i = 0; i < movie.length; i++) {
+    if (selectedGenre == 'select-genre') {
+      movie[i].hidden = '';
+    } else if (movie[i].className == selectedGenre) {
+      movie[i].hidden = '';
+    } else {
+      movie[i].hidden = 'true';
+    }
+  }
+});
+
+movie.addEventListener('change', (e) => {
+  if (e.target.value === 'Select a movie') {
+    selectedP.textContent = `Please select a movie.`;
+  } else {
+    selectedP.textContent = `Your selected movie is ${e.target.value}.`;
+  }
 });
