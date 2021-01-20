@@ -8,11 +8,13 @@
 </head>
 <body>
   <form action="http://localhost:3000/signup" method="post">
-    <h2>Subscribe to our newsletter</h2>
-    <label for="username"></label>
-    <input type="text" name="username">
-    <label for="email"></label>
-    <input type="email" name="email" id="">
+    <h3>Subscribe to our newsletter</h3>
+    <label for="username"> Full name
+      <input type="text" name="username" placeholder="name" required>
+    </label>
+    <label for="email"> Email address
+      <input type="email" name="email" placeholder="email" required>
+    </label>
     <button type="submit">Sign up!</button>
   </form>
 </body>

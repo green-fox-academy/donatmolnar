@@ -1,0 +1,46 @@
+body {
+  height: 90vh;
+  background: no-repeat linear-gradient(to top right, rgb(255, 83, 98), rgb(255, 190, 70));
+  font-family: Arial, Helvetica;
+}
+
+form {
+  margin: 50px auto;
+  padding: 10px 40px 40px 40px;
+  width: 300px;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 30px 30px 20px 1px rgba(0, 0, 0, 0.2);}
+
+h3 {
+  margin: 30px auto;
+  width: 250px;
+}
+
+label {
+  font-size: small;
+}
+
+input {
+  display: block;
+  margin: 10px 0;
+  padding: 0 20px;
+  width: 90%;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  background: no-repeat linear-gradient(to right, darkgrey, white);
+
+}
+
+button {
+  color: white;
+  font-size: large;
+  background: no-repeat linear-gradient(to right, rgb(46, 174, 248), rgb(77, 245, 127));
+  border: none;
+  border-radius: 30px;
+  display: block;
+  margin: 20px auto;
+  height: 40px;
+  width: 100px;
+}

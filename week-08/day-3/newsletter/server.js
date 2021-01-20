@@ -1,10 +1,10 @@
 'use strict';
 
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
-app.use(express.json()) // for parsing application/json
-app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // for reading the html form
 
 app.post('/signup', (req, res) => {
   let username = req.body.username;
