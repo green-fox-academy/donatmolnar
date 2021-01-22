@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, minmax(100px, auto));
+      gap: 7px 7px;
+      background-color: black;
+    }
+
+    div {
+      background: blueviolet;
+    }
+
+    #lime {
+      background: limegreen;
+      grid-row: 1 / 3;
+      grid-column: 2 / 4;
+      display: grid;
+      position: relative;
+    }
+
+    #gold {
+      height: 80%;
+      width: 80%;
+      background: gold;
+      position: absolute;
+      left: 10%;
+      top: 2%;
+    }
+
+
+  </style>
+  <title>Big area</title>
+</head>
+<body>
+  <section>
+    <div></div>
+    <div></div>
+    <div id="lime">
+      <p id ="gold"></p>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </section>
+  </body>
+  </html>
