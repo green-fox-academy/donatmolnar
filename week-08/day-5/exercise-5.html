@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    section {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: x-large;
+      width: 700px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      grid-template-areas: 
+      "a b c d e f g"
+      "v main main main main main h"
+      "u main main main main main i"
+      "t main main main main main j"
+      "s main main main main main k"
+      "l m n o p q r"
+    ;}
+
+    p {
+      background: goldenrod;
+      height: 75px;
+      width: 100px;
+      margin: 0;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #a {grid-area: a;} 
+    #b {grid-area: b;} 
+    #c {grid-area: c;} 
+    #d {grid-area: d;} 
+    #e {grid-area: e;} 
+    #f {grid-area: f;} 
+    #g {grid-area: g;} 
+    #h {grid-area: h;} 
+    #i {grid-area: i;} 
+    #j {grid-area: j;} 
+    #k {grid-area: k;} 
+    #l {grid-area: l;} 
+    #m {grid-area: m;} 
+    #n {grid-area: n;} 
+    #o {grid-area: o;} 
+    #p {grid-area: p;} 
+    #q {grid-area: q;} 
+    #r {grid-area: r;} 
+    #s {grid-area: s;} 
+    #t {grid-area: t;} 
+    #u {grid-area: u;} 
+    #v {grid-area: v;} 
+    
+    main {
+      background: limegreen;
+      grid-area: main;
+      position: relative;
+      box-shadow: inset 0px 0px 20px rgba(0,0,0,0.5);
+    }
+
+    div {
+      background: blueviolet;
+      position: absolute;
+      height: 150px;
+      width: 250px;
+      top: 90px;
+      left: 240px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  </style>
+  <title>Board game</title>
+</head>
+<body>
+  <section>
+    <p id="a">Start</p>
+    <p id="b"></p>
+    <p id="c"></p>
+    <p id="d"></p>
+    <p id="e"></p>
+    <p id="f"></p>
+    <p id="g"></p>
+    <p id="h"></p>
+    <p id="i"></p>
+    <p id="j"></p>
+    <p id="k"></p>
+    <p id="l"></p>
+    <p id="m"></p>
+    <p id="n"></p>
+    <p id="o"></p>
+    <p id="p"></p>
+    <p id="q"></p>
+    <p id="r">Pub</p>
+    <p id="s"></p>
+    <p id="t"></p>
+    <p id="u"></p>
+    <p id="v"></p>
+    <main>
+      <div>CARDS</div>
+    </main>
+  </section>
+</body>
+</html>
