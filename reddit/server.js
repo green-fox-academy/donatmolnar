@@ -28,10 +28,10 @@ app.get('/', (req,res) => {
 // sends all the active posts
 app.get('/posts', (req,res) => {
   conn.query(
-    `SELECT * FROM posts WHERE is_active = true`, [], (err, rows) => {
+    `SELECT * FROM posts WHERE is_active = true`, (err, rows) => {
       if (err) {
         console.log(err.toString());
-        res.status(500).json({error: 'error during writing sql db'})
+        res.status(500).json({error: 'error during reading sql db'})
         return;
       }
       res.setHeader('Content-type', 'application/json');
@@ -40,19 +40,18 @@ app.get('/posts', (req,res) => {
 });
 
 // sends a single post based on id
-app.get(`/posts/:${id}`, (req,res) => {
+app.get(`/posts/:id`, (req,res) => {
   let id = req.params.id;
   conn.query(
     `SELECT * FROM posts WHERE is_active = true AND post_id = ?`, [id], (err, rows) => {
       if (err) {
         console.log(err.toString());
-        res.status(500).json({error: 'error during writing sql db'})
+        res.status(500).json({error: 'error during reading sql db'})
         return;
       }
       res.status(200).json(rows);
     });
   });
-  
 
 // adds new post
 app.post('/posts', (req,res) => {
@@ -66,8 +65,17 @@ app.post('/posts', (req,res) => {
         res.status(500).json(err);
         return;
       }
-      res.status(200).json(rows);
     });
+
+    conn.query(
+      `SELECT * FROM posts WHERE is_active = true AND post_id = (SELECT MAX(post_id) FROM posts);`, (err, rows) => {
+        if (err) {
+          console.log(err.toString());
+          res.status(500).json({error: 'error during reading sql db'})
+          return;
+        }
+        res.status(200).json(rows);
+      });
 });
 
 // upvote
@@ -129,7 +137,7 @@ app.put('/posts/:id', (req,res) => {
   let url = req.body.url;
 
   conn.query(
-    `UPDATE posts SET (title, url) VALUE (?,?) WHERE post_id = ?;`, [title, url, id], (err, rows) => {
+    `UPDATE posts SET (title, url) VALUE (?,?) WHERE post_id = ? AND is_active = true;`, [title, url, id], (err, rows) => {
       if (err) {
         res.status(500).json(err);
         return;
