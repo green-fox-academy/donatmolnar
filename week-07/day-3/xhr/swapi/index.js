@@ -7,11 +7,12 @@ window.onload = () => {
   
   searchRequest.onload = (result) => {
     let resultArray = JSON.parse(result.target.response).results;
-    let name = resultArray[0].name; //Luke Skywalker
+    let name = resultArray.filter(element => element.name === 'Luke Skywalker'); //Luke Skywalker
     let films = resultArray[0].films; //example result: http://swapi.dev/api/films/1/
     films.forEach((element) => {
     createList(element);
-    }) ;   
+  }) ;   
+  console.log(name);
   };
 };
 
