@@ -1,0 +1,21 @@
+body {
+  height: 97vh;
+  background: no-repeat linear-gradient(to top right, tomato, orange);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+p {
+  background: lightgoldenrodyellow;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 30px;
+
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin: 0 auto;
+  background: linear-gradient(to top right, lightskyblue, lightgreen);
+}
