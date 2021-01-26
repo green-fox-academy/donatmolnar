@@ -22,7 +22,7 @@ conn.connect((err) => {
 
 // checks the response
 app.get('/', (req,res) => {
-  res.status(200).json({Status: "Connection established: postman has been reached by the server"});
+  res.status(200).json({status: "Connection established: postman has been reached by the server"});
 });
 
 // sends all the active posts
@@ -147,3 +147,5 @@ app.put('/posts/:id', (req,res) => {
 });
 
 app.listen(3000);
+
+module.exports = app;
