@@ -2,14 +2,13 @@ const express = require('express');
 const app = express();
 
 app.get('/groot', (req, res) => {
-  // TODO: implement this method
   if (req.query.message !== undefined) {
     let message = req.query.message;
-    res.status(200).send(JSON.stringify({
+    res.status(200).send({
       "received": `${message}`,
-      "translated": "I am Groot!"}))
+      "translated": "I am Groot!"});
   } else {
-    res.status(400).send(JSON.stringify({"error": "I am Groot!"}))
+    res.status(400).send({"error": "I am Groot!"});
     }
 });
 
