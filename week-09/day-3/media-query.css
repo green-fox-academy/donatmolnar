@@ -1,0 +1,61 @@
+.container {
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+  height: 30em;
+}
+
+.item {
+  width: 100%;
+}
+
+.green {
+  background: limegreen;
+  flex-grow: 1;
+  order: 1;
+}
+
+.yellow {
+  background: gold;
+  flex-grow: 2;
+  order: 2;
+}
+
+.purple {
+  background: blueviolet;
+  flex-grow: 1;
+  order: 3;
+}
+
+@media screen and (min-width: 600px) {
+
+  .container {
+    background: white;
+    display: flex;
+
+  }
+
+  .item {
+    display: block;
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .green {
+    background: limegreen;
+    flex-grow: 1;
+    order: 1;
+  }
+  
+  .yellow {
+    background: gold;
+    flex-grow: 1;
+    order: 2;
+  }
+  
+  .purple {
+    background: blueviolet;
+    flex-grow: 1;
+    order: 3;
+  }
+}
