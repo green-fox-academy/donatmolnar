@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(65, 68, 85);
+}
+
+button {
+  height: 50px;
+  background: firebrick;
+  border: none;
+  margin: 30px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+i {
+  background: rgb(41, 41, 41);
+  color: firebrick;
+  display: inline-block;
+  text-align: center;
+  height: 100%;
+  width: 50px;
+}
+
+i::before {
+  position: relative;
+  top: 10px;
+}
+
+label {
+  color: whitesmoke;
+  width: 80px;
+  padding: 30px;
+  display: none;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  margin-left: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid rgb(41, 41, 41);
+  display: none;
+}
+
+[data-action="confirm"] {
+  background: rgb(62, 155, 59);
+}
+
+[data-action] i::before {
+  color: white;
+}
+
+button:hover > label {
+  display: inline-block;
+  width: 80px;
+}
+
+button:hover > div {
+  display: inline-block;
+}
+
+[data-action="confirm"]:hover > i::before {
+  color: rgb(62, 155, 59);
+}
+
+[data-action="delete"]:hover > i::before {
+  color: firebrick;
+}
