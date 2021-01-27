@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(0, 157, 255);
+  font-family: sans-serif;
+}
+
+.wrap {
+  border-radius: 5px;
+  overflow: hidden;
+  width: 300px;
+  margin: 20px auto;
+}
+
+table {
+  width: 300px;
+  border-collapse: collapse;
+  border-style: hidden;
+}
+
+th {
+  background: black;
+  color: white;
+  font-weight: 100;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid rgb(71, 71, 71);
+  border-bottom: 2px solid rgb(150, 150, 150);
+}
+
+tr:nth-child(even) {
+  background: whitesmoke;
+}
+
+tr:nth-child(odd) {
+  background: rgb(209, 209, 209);
+}
+
+td {
+  color: rgb(59, 59, 59);
+  padding: 10px;
+  border: 1px solid rgb(150, 150, 150);
+}
+
+[data-currency]:before {
+  content: "$ "
+}
+
+[data-currency]:after {
+  content: ".00"
+}
