@@ -21,9 +21,19 @@ conn.connect((err) => {
   console.log('Connected to mysql');
 });
 
-// checks the response
+// sends the landingpage
 app.get('/', (req,res) => {
   res.status(200).sendFile('index.html');
+});
+
+// sends the add post page
+app.get('/add', (req,res) => {
+  res.status(200).sendFile(__dirname + '/public/add.html');
+});
+
+// sends the modify post page
+app.get('/modify', (req,res) => {
+  res.status(200).sendFile(__dirname + '/public/modify.html');
 });
 
 // sends all the active posts
@@ -109,7 +119,7 @@ app.put('/posts/:id/downvote', (req,res) => {
 app.delete('/posts/:id', (req,res) => {
   let id = req.params.id;
   conn.query(
-    `UPDATE posts SET is_active = false WHERE post_id = ?;`, [id], (err, rows) => { // owner = null is deleting?
+    `UPDATE posts SET is_active = false WHERE post_id = ?;`, [id], (err, rows) => {
       if (err) {
         res.status(500).json(err);
         return;
