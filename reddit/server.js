@@ -5,6 +5,7 @@ const app = express();
 const mysql = require('mysql');
 
 app.use(express.json());
+app.use(express.static('public'));
 
 const conn = mysql.createConnection({
   host: 'localhost',
@@ -22,7 +23,7 @@ conn.connect((err) => {
 
 // checks the response
 app.get('/', (req,res) => {
-  res.status(200).json({status: "Connection established: postman has been reached by the server"});
+  res.status(200).sendFile('index.html');
 });
 
 // sends all the active posts
