@@ -16,9 +16,9 @@ main {
 header {
   height: 150px;
   width: 100%;
-  background-image: url("https://superdevresources.com/wp-content/uploads/2017/11/free-flat-space-background.jpg");
-  background-image: url("https://amp.ikimaru.com/pic/4472534_full-5760x1080-wallpaper-purple-67-star-wars-space-background-5760x1080-on-wallpapersafari.jpg");
-  background-size: 110%;
+  background-image: url("./assets/blackhole.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 #posts {
@@ -34,7 +34,7 @@ header {
 }
 
 .post:hover {
-  border: 1px solid rgb(80,80,80);
+  border: 1px solid rgb(100, 100, 100);
   cursor: pointer;
 }
 
@@ -79,8 +79,6 @@ header {
 .counter > .down:hover {
   background-image: url(./assets/downvoted.png);
 }
-
-
 
 .content > h2 {
   margin: 10px 0;
@@ -141,6 +139,10 @@ aside {
   color: #fe4f00;
   text-decoration: none;
   padding-left: 10px;
+}
+
+#strong > a:hover {
+  color: #fa8e5c ;
 }
 
 #share {
