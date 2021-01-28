@@ -3,24 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Reddit - Space</title>
 </head>
 <body>
   <header></header>
   <main>
-    <div id="posts"></div>
+    <div id="posts">
+      <div class="post">
+        <div class="counter">
+          <button class="up">up</button>
+          <p class="score">1.2k</p>
+          <button class="down">down</button>
+        </div>
+        <div class="content">
+          <h2>The title of the placeholder post</h2>
+          <p>Submitted 3 hours ago by username</p>
+          <button class="modify">modify</button>
+          <button class="remove">remove</button>
+        </div>
+      </div>
+    </div>
     <aside>
       <button id="new">SUBMIT A NEW POST</button>
-      <div id="about">ABOUT <a href="/posts">r/space</a></div>
-      <p>Share & discuss informative content on:</p>
-      <ul>
-        <li>Astrophysics</li>
-        <li>Cosmology</li>
-        <li>Space Exploration</li>
-        <li>Planetary Science</li>
-        <li>Astrobiology</li>
-      </ul>
+      <div id="about">
+        <p id="strong">ABOUT <a href="/posts">r/space</a></p>
+        <p id="share">Share & discuss informative content on:</p>
+        <ul>
+          <li>Astrophysics</li>
+          <li>Cosmology</li>
+          <li>Space Exploration</li>
+          <li>Planetary Science</li>
+          <li>Astrobiology</li>
+        </ul>
+      </div>
     </aside>
   </main>
 </body>
