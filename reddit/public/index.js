@@ -1,6 +1,6 @@
 'use strict';
 
-import * as timer from './timer';
+import { humanized_time_span } from './timer.js';
 
 window.onload = () => {
   const posts = document.querySelector('#posts')
@@ -9,8 +9,15 @@ window.onload = () => {
   .then(response => response.json())
   .then(response => 
     response.forEach(element => {
+      console.log(element);
       posts.appendChild(createPost(element))
     }));
+
+    posts.addEventListener('click', (event) => {
+      let click = event.target.getAttribute('id');
+      console.log(click);
+    });
+
 
 };
 
@@ -19,12 +26,16 @@ let createPost = (postObject) => {
   // creates the post elements
   let post = document.createElement('div');
   post.className = 'post';
+  post.setAttribute('id', `${postObject.post_id}`);
+  post.setAttribute(`onclick`, `window.location.href='${postObject.url}'`);
 
   let counter = document.createElement('div');
   counter.className = 'counter';
 
   let up = document.createElement('button');
   up.className = 'up';
+  up.setAttribute(`onclick`, `${postObject.post_id}`);
+
 
   let score = document.createElement('p');
   score.className = 'score';
@@ -42,7 +53,7 @@ let createPost = (postObject) => {
   
   let subtitle = document.createElement('p');
   subtitle.className = 'subtitle';
-  subtitle.textContent = `Submitted ${timer.humanized_time_span(postObject.timestamp)} by ${postObject.owner}`;
+  subtitle.textContent = `Submitted ${humanized_time_span(postObject.timestamp)} by ${postObject.owner}`;
 
   let modify = document.createElement('button');
   modify.className = 'modify';
@@ -66,4 +77,4 @@ let createPost = (postObject) => {
   post.appendChild(content);
 
   return post;
-}
+};
