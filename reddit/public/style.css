@@ -46,7 +46,6 @@ header {
 }
 
 .counter > button {
-  color: #fe4f00;
   cursor: pointer;
   background: transparent;
   border: none;
@@ -64,8 +63,6 @@ header {
 .counter > .up:hover {
   background-image: url(./assets/upvoted.png);
 }
-
-
 
 .counter > .down {
   width: 20px;
