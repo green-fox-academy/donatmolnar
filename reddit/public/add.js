@@ -8,6 +8,7 @@ submitForm.addEventListener('submit', (event) => {
     
   let title = document.querySelector('#title').value;
   let url = document.querySelector('#url').value;
+
   if (title === '' || url === '') {
     alert('Ooops, you forgot to add title or url...')
   } else if (!isValidUrl(url)) {
@@ -21,7 +22,7 @@ submitForm.addEventListener('submit', (event) => {
         url: `${url}`,
         owner: `anonym`
       })
-    })
+    }).then(window.location.assign(`http://localhost:3000/`));
   };
 })
 
