@@ -158,6 +158,19 @@ app.put('/posts/:id', (req,res) => {
     });
 });
 
+// permanent delete
+app.delete('/posts/purge/:id', (req,res) => {
+  let id = req.params.id;
+  conn.query(
+    `DELETE FROM posts WHERE post_id = ?;`, [id], (err, rows) => {
+      if (err) {
+        res.status(500).json(err);
+        return;
+      }
+      res.status(200).json(rows);
+    });
+});
+
 app.listen(3000);
 
 module.exports = app;
