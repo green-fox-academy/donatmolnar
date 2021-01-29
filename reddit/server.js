@@ -65,7 +65,7 @@ app.get(`/posts/:id`, (req,res) => {
   });
 
 // adds new post
-app.post('/posts', (req,res) => {
+app.post('/newpost', (req,res) => {
   let title = req.body.title;
   let url = req.body.url;
   let owner = req.body.owner;
@@ -87,6 +87,7 @@ app.post('/posts', (req,res) => {
         }
         res.status(200).json(rows);
       });
+      //res.redirect('/');
 });
 
 // upvote
