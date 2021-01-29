@@ -7,7 +7,7 @@ const mysql = require('mysql');
 
 
 app.use(express.json()); //replaces body-parser
-app.use(express.static('assets')); // makes assest folder publicly available
+app.use(express.static('assets')); // makes assets folder publicly available
 app.use(express.urlencoded({ extended: true })); //csak amikor html-form-ból jön az adat és nem json-ben req.bodyban.
 
 // connects to the mysql database
