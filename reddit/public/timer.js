@@ -77,8 +77,6 @@ export function humanized_time_span(date, ref_date, date_formats, time_units) {
       }
     }
     return time_ago_text;
-  }
-          
+  }   
   return render_date(get_format());
 }
-
