@@ -99,8 +99,18 @@ app.put('/posts/:id/upvote', (req,res) => {
         res.status(500).json(err);
         return;
       }
-      res.status(200).json(rows);
+      //res.status(200).json(rows);
     });
+
+    conn.query(
+      `SELECT * FROM posts WHERE is_active = true AND post_id = ?;`, [id], (err, rows) => {
+        if (err) {
+          console.log(err.toString());
+          res.status(500).json({error: 'error during reading sql db'})
+          return;
+        }
+        res.status(200).json(rows);
+      });
 });
 
 // downvote
@@ -112,8 +122,18 @@ app.put('/posts/:id/downvote', (req,res) => {
         res.status(500).json(err);
         return;
       }
-      res.status(200).json(rows);
+      //res.status(200).json(rows);
     });
+
+    conn.query(
+      `SELECT * FROM posts WHERE is_active = true AND post_id = ?;`, [id], (err, rows) => {
+        if (err) {
+          console.log(err.toString());
+          res.status(500).json({error: 'error during reading sql db'})
+          return;
+        }
+        res.status(200).json(rows);
+      });
 });
 
 // delete
