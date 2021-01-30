@@ -6,18 +6,52 @@ window.onload = () => {
   const posts = document.querySelector('#posts')
   
   fetch('/posts')
-  .then(response => response.json())
-  .then(response => 
-    response.forEach(element => {
+  .then(res => res.json())
+  .then(res => 
+    res.forEach(element => {
       posts.appendChild(createPost(element))
     }));
-
-    posts.addEventListener('click', (event) => {
-      let click = event.target.getAttribute('data-id');
-      console.log(click);
-    });
-
 };
+
+
+posts.addEventListener('click', (event) => {
+  let dataId = event.target.getAttribute('data-id');
+  let action = event.target.getAttribute('class');
+  let counter = document.querySelector(`[data-id="${dataId}"] ~ .score`);
+  console.log(dataId);
+  console.log(action);
+
+
+  if (action === 'up') {
+    //counter.textContent++;
+
+    fetch(`http://localhost:3000/posts/${dataId}/upvote`, {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({id: `${dataId}`})
+    })
+    .then(res => res.json())
+    .then(res => counter.textContent = res[0].score);
+
+  } else if (action === 'down') {
+    //counter.textContent--;
+
+    fetch(`http://localhost:3000/posts/${dataId}/downvote`, {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({id: `${dataId}`})
+    })
+    .then(res => res.json())
+    .then(res => counter.textContent = res[0].score);
+
+  } else if (action === 'remove') {
+
+  } else if (action === 'modify') {
+
+  }
+
+});
+
 
 const newButton = document.querySelector('#new')
 
