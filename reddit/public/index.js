@@ -17,11 +17,9 @@ window.onload = () => {
 posts.addEventListener('click', (event) => {
   let dataId = event.target.getAttribute('data-id');
   let action = event.target.getAttribute('class');
-  let counter = document.querySelector(`[data-id="${dataId}"] ~ .score`);
-  console.log(dataId);
-  console.log(action);
   let upvoteButton = document.querySelector(`[data-id="${dataId}"]`);
   let downvoteButton = document.querySelector(`[data-id="${dataId}"] ~ .down`);
+  let counter = document.querySelector(`[data-id="${dataId}"] ~ .score`);
 
 
   if (action === 'up') {
@@ -47,21 +45,20 @@ posts.addEventListener('click', (event) => {
     .then(res => counter.textContent = res[0].score);
 
   } else if (action === 'remove') {
-    
+
     let post = document.getElementById(`${dataId}`);
     fetch(`http://localhost:3000/posts/${dataId}`, {method: 'DELETE'});
     post.remove();
 
   } else if (action === 'modify') {
     //window.location.assign(`http://localhost:3000/modify`);
-
   }
 
 });
 
 
 const newButton = document.querySelector('#new')
-newButton.addEventListener('click', () =>{
+newButton.addEventListener('click', () => {
   window.location.assign(`http://localhost:3000/add`);
 })
 
