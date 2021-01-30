@@ -20,33 +20,40 @@ posts.addEventListener('click', (event) => {
   let counter = document.querySelector(`[data-id="${dataId}"] ~ .score`);
   console.log(dataId);
   console.log(action);
+  let upvoteButton = document.querySelector(`[data-id="${dataId}"]`);
+  let downvoteButton = document.querySelector(`[data-id="${dataId}"] ~ .down`);
 
 
   if (action === 'up') {
     //counter.textContent++;
+    upvoteButton.disabled = true;
+    downvoteButton.disabled = false;
 
     fetch(`http://localhost:3000/posts/${dataId}/upvote`, {
       method: 'PUT',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({id: `${dataId}`})
     })
     .then(res => res.json())
     .then(res => counter.textContent = res[0].score);
 
   } else if (action === 'down') {
     //counter.textContent--;
+    downvoteButton.disabled = true;
+    upvoteButton.disabled = false;
 
     fetch(`http://localhost:3000/posts/${dataId}/downvote`, {
       method: 'PUT',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({id: `${dataId}`})
     })
     .then(res => res.json())
     .then(res => counter.textContent = res[0].score);
 
   } else if (action === 'remove') {
+    
+    let post = document.getElementById(`${dataId}`);
+    fetch(`http://localhost:3000/posts/${dataId}`, {method: 'DELETE'});
+    post.remove();
 
   } else if (action === 'modify') {
+    //window.location.assign(`http://localhost:3000/modify`);
 
   }
 
@@ -54,7 +61,6 @@ posts.addEventListener('click', (event) => {
 
 
 const newButton = document.querySelector('#new')
-
 newButton.addEventListener('click', () =>{
   window.location.assign(`http://localhost:3000/add`);
 })
@@ -65,27 +71,22 @@ let createPost = (postObject) => {
   let post = document.createElement('div');
   post.className = 'post';
   post.setAttribute('id', `${postObject.post_id}`);
-  //post.setAttribute(`onclick`, `window.location.href='${postObject.url}'`);
 
   let counter = document.createElement('div');
   counter.className = 'counter';
 
   let up = document.createElement('button');
   up.className = 'up';
-  //up.setAttribute(`onclick`, `${postObject.post_id}`);
   up.setAttribute(`data-id`, `${postObject.post_id}`);
-
 
   let score = document.createElement('p');
   score.className = 'score';
   score.textContent = postObject.score;
   score.setAttribute(`data-id`, `${postObject.post_id}`);
 
-
   let down = document.createElement('button');
   down.className = 'down';
   down.setAttribute(`data-id`, `${postObject.post_id}`);
-
 
   let content = document.createElement('div');
   content.className = 'content';
