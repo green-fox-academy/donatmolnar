@@ -39,7 +39,7 @@ app.get('/modify', (req,res) => {
 // sends all the active posts
 app.get('/posts', (req,res) => {
   conn.query(
-    `SELECT * FROM posts WHERE is_active = true`, (err, rows) => {
+    `SELECT * FROM posts WHERE is_active = true ORDER BY post_id DESC;`, (err, rows) => {
       if (err) {
         console.log(err.toString());
         res.status(500).json({error: 'error during reading sql db'})
@@ -54,7 +54,7 @@ app.get('/posts', (req,res) => {
 app.get(`/posts/:id`, (req,res) => {
   let id = req.params.id;
   conn.query(
-    `SELECT * FROM posts WHERE is_active = true AND post_id = ?`, [id], (err, rows) => {
+    `SELECT * FROM posts WHERE is_active = true AND post_id = ?;`, [id], (err, rows) => {
       if (err) {
         console.log(err.toString());
         res.status(500).json({error: 'error during reading sql db'})
