@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="img/favicon.png" type="image/png">
   <title>FoxPlayer</title>
@@ -10,35 +11,47 @@
 <body>
   <main>
     <div id="playlists">
-
+      <button>New playlist</button>
+      <ul>
+        <li>All </li>
+        <li>Favourites</li>
+        <li>Custom playlist</li>
+      </ul>
     </div>
     <div id="songlist">
       <div id="nowplaying">
-        <img src="" alt="artwork">
+        <img id="artwork" src="" alt="artwork">
         <div id="songplaying">
-          <p id=nowplayingtitle></p>
-          <p id=nowplayingsubtitle></p>
+          <h3 id=nowplayingtitle>now playing title</h3>
+          <p id=nowplayingsubtitle>now playing artist</p>
         </div>
         <div>
-          <button id="addtolist"></button>
-          <button id="addtofav"></button>
+          <button id="addtolist">+</button>
+          <button id="addtofav">star</button>
         </div>
       </div>
       <table>
         <tr>
           <td class="id">1</td>
-          <td class="artwork"></td>
+          <td class="miniartwork">pic</td>
           <td class="title">Title</td>
           <td class="artist">Artist</td>
-          <td class="total">3.14</td>
+          <td class="total">3:14</td>
+        </tr>
+        <tr>
+          <td class="id">2</td>
+          <td class="miniartwork">pic</td>
+          <td class="title">Title2</td>
+          <td class="artist">Artist3</td>
+          <td class="total">6:66</td>
         </tr>
       </table>
     </div>
   </main>
   <footer>
-    <button id="back"></button>
-    <button id="pause"></button>
-    <button id="forward"></button>
+    <button id="back">back </button>
+    <button id="pause">pause</button>
+    <button id="next">next</button>
     <p id="currenttime"></p>
     <input type="range" name="songrange" id="songrange" min="0" max="100">
     <p id="totaltime"></p>
