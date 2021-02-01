@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgb(255, 123, 0);
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  height: 500px;
+  position: relative;
+  background: rgb(29, 29, 29);
+  color: whitesmoke;
+
+}
+
+main {
+  display: flex;
+}
+
+#playlists {
+  width: 30%;
+  background: rgb(41, 41, 41);
+  border-radius: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+#songlist {
+  width: 70%;
+  background: rgb(41, 41, 41);
+  border-radius: 10px;
+
+}
+
+#nowplaying {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(orange, black);
+}
+
+#artwork {
+  width: 100px;
+  height: 100px;
+}
+
+table {
+  width: 100%;
+}
+
+.miniartwork {
+  width: 50px;
+  height: 50px;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+
+audio {
+  width: 80%;
+}
+
