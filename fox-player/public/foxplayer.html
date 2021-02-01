@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  <title>FoxPlayer</title>
+</head>
+<body>
+  <main>
+    <div id="playlists">
+
+    </div>
+    <div id="songlist">
+      <div id="nowplaying">
+        <img src="" alt="artwork">
+        <div id="songplaying">
+          <p id=nowplayingtitle></p>
+          <p id=nowplayingsubtitle></p>
+        </div>
+        <div>
+          <button id="addtolist"></button>
+          <button id="addtofav"></button>
+        </div>
+      </div>
+      <table>
+        <tr>
+          <td class="id">1</td>
+          <td class="artwork"></td>
+          <td class="title">Title</td>
+          <td class="artist">Artist</td>
+          <td class="total">3.14</td>
+        </tr>
+      </table>
+    </div>
+  </main>
+  <footer>
+    <button id="back"></button>
+    <button id="pause"></button>
+    <button id="forward"></button>
+    <p id="currenttime"></p>
+    <input type="range" name="songrange" id="songrange" min="0" max="100">
+    <p id="totaltime"></p>
+    <i>Volume</i>
+    <input type="range" name="volume" id="volume" min="0" max="100">
+    <audio controls src="audio/Ars_Sonor_-_02_-_Never_Give_Up.mp3" type="audio/mp3"></audio>
+  </footer>
+  <script src="foxplayer.js"></script>
+</body>
+</html>
