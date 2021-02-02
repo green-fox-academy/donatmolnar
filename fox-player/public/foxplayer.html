@@ -11,53 +11,143 @@
 <body>
   <main>
     <div id="playlists">
-      <button>New playlist</button>
+      <div id="playlisthead">
+        <h3 id="playlistheadtitle">Playlists</h3>
+        <button id="newplaylist">+</button>
+      </div>
       <ul>
         <li>All </li>
         <li>Favourites</li>
-        <li>Custom playlist</li>
+        <li>Custom playlist<button class="remove">✖️</button></li>
       </ul>
     </div>
     <div id="songlist">
       <div id="nowplaying">
-        <img id="artwork" src="" alt="artwork">
+        <img id="artwork" src="./img/music-placeholder.png" alt="artwork">
         <div id="songplaying">
           <h3 id=nowplayingtitle>now playing title</h3>
-          <p id=nowplayingsubtitle>now playing artist</p>
+          <p id=nowplayingartist>now playing artist</p>
         </div>
-        <div>
+        <div id="nowplayingbuttons">
           <button id="addtolist">+</button>
-          <button id="addtofav">star</button>
+          <button id="addtofav"></button>
         </div>
       </div>
-      <table>
-        <tr>
-          <td class="id">1</td>
-          <td class="miniartwork">pic</td>
-          <td class="title">Title</td>
-          <td class="artist">Artist</td>
-          <td class="total">3:14</td>
-        </tr>
-        <tr>
-          <td class="id">2</td>
-          <td class="miniartwork">pic</td>
-          <td class="title">Title2</td>
-          <td class="artist">Artist3</td>
-          <td class="total">6:66</td>
-        </tr>
-      </table>
+      <div id="songtable">
+        <table>
+          <tr href="audio/Ars_Sonor_-_02_-_Never_Give_Up.mp3">
+            <td class="id">1</td>
+            <td class="miniartwork">pic</td>
+            <td class="title">Title</td>
+            <td class="artist">Artist</td>
+            <td class="total">3:14</td>
+          </tr>
+          <tr href="audio/Organoid_-_09_-_Purple_Drift.mp3">
+            <td class="id">2</td>
+            <td class="miniartwork">pic</td>
+            <td class="title">Title2</td>
+            <td class="artist">Artist3</td>
+            <td class="total">6:66</td>
+          </tr>
+          <tr>
+            <td class="id">1</td>
+            <td class="miniartwork">pic</td>
+            <td class="title">Title</td>
+            <td class="artist">Artist</td>
+            <td class="total">3:14</td>
+          </tr>
+          <tr>
+            <td class="id">2</td>
+            <td class="miniartwork">pic</td>
+            <td class="title">Title2</td>
+            <td class="artist">Artist3</td>
+            <td class="total">6:66</td>
+          </tr>
+          <tr>
+            <td class="id">1</td>
+            <td class="miniartwork">pic</td>
+            <td class="title">Title</td>
+            <td class="artist">Artist</td>
+            <td class="total">3:14</td>
+          </tr>
+          <tr>
+            <td class="id">2</td>
+            <td class="miniartwork">pic</td>
+            <td class="title">Title2</td>
+            <td class="artist">Artist3</td>
+            <td class="total">6:66</td>
+          </tr>
+          <tr>
+            <td class="id">1</td>
+            <td class="miniartwork">pic</td>
+            <td class="title">Title</td>
+            <td class="artist">Artist</td>
+            <td class="total">3:14</td>
+          </tr>
+          <tr>
+            <td class="id">2</td>
+            <td class="miniartwork">pic</td>
+            <td class="title">Title2</td>
+            <td class="artist">Artist3</td>
+            <td class="total">6:66</td>
+          </tr>
+          <tr>
+            <td class="id">1</td>
+            <td class="miniartwork">pic</td>
+            <td class="title">Title</td>
+            <td class="artist">Artist</td>
+            <td class="total">3:14</td>
+          </tr>
+          <tr>
+            <td class="id">2</td>
+            <td class="miniartwork">pic</td>
+            <td class="title">Title2</td>
+            <td class="artist">Artist3</td>
+            <td class="total">6:66</td>
+          </tr>
+          <tr>
+            <td class="id">1</td>
+            <td class="miniartwork">pic</td>
+            <td class="title">Title</td>
+            <td class="artist">Artist</td>
+            <td class="total">3:14</td>
+          </tr>
+          <tr>
+            <td class="id">2</td>
+            <td class="miniartwork">pic</td>
+            <td class="title">Title2</td>
+            <td class="artist">Artist3</td>
+            <td class="total">6:66</td>
+          </tr>
+          <tr>
+            <td class="id">1</td>
+            <td class="miniartwork">pic</td>
+            <td class="title">Title</td>
+            <td class="artist">Artist</td>
+            <td class="total">3:14</td>
+          </tr>
+          <tr>
+            <td class="id">2</td>
+            <td class="miniartwork">pic</td>
+            <td class="title">Title2</td>
+            <td class="artist">Artist3</td>
+            <td class="total">6:66</td>
+          </tr>
+        </table>
+      </div>
     </div>
   </main>
   <footer>
-    <button id="back">back </button>
-    <button id="pause">pause</button>
-    <button id="next">next</button>
-    <p id="currenttime"></p>
+    <button id="back"> </button>
+    <button id="pause"></button>
+    <button id="next"></button>
+    <p id="currenttime">2:45</p>
     <input type="range" name="songrange" id="songrange" min="0" max="100">
-    <p id="totaltime"></p>
-    <i>Volume</i>
+    <p id="totaltime">6:66</p>
+    <button id="shuffle"></button>
+    <i id="volumeicon"></i>
     <input type="range" name="volume" id="volume" min="0" max="100">
-    <audio controls src="audio/Ars_Sonor_-_02_-_Never_Give_Up.mp3" type="audio/mp3"></audio>
+    <audio controls src="" type="audio/mp3"></audio>
   </footer>
   <script src="foxplayer.js"></script>
 </body>
