@@ -1,7 +1,13 @@
 * {
   margin: 0;
   padding: 0;
-  border: 1px solid rgb(255, 123, 0);
+  /*border: 1px solid rgb(255, 123, 0);*/
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 153, 0, 0.5) transparent;
+}
+
+*:focus {
+  outline: none;
 }
 
 body {
@@ -24,23 +30,56 @@ main {
   width: 30%;
   background: rgb(41, 41, 41);
   border-radius: 10px;
+  overflow: hidden;
+}
+
+#playlisthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(51, 51, 51);
+}
+
+#playlistheadtitle {
+  padding: 10px;
+}
+
+#newplaylist {
+  padding: 10px;
+  background: transparent;
+  border: none;
+  color: #fe4f00;
+  font-size: xx-large;
+  cursor: pointer;
 }
 
 li {
   list-style: none;
+  padding: 10px 0 10px 20px;
+  width: 93%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+li:hover {
+  background: rgba(61, 61, 61, 0.8);
+}
+
+.remove {
+  color: #fe4f00;
+  width: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 #songlist {
   width: 70%;
-  background: rgb(41, 41, 41);
+  background: rgb(29, 29, 29);
   border-radius: 10px;
-
-}
-
-#nowplaying {
-  display: flex;
-  justify-content: space-between;
-  background: linear-gradient(orange, black);
+  margin: 0 0 0 10px;
 }
 
 #artwork {
@@ -48,8 +87,71 @@ li {
   height: 100px;
 }
 
+#nowplaying {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(orange, transparent);
+}
+
+#songplaying {
+  align-content: center;
+}
+
+#nowplayingtitle {
+  display: block;
+  font-weight: bolder;
+}
+
+#nowplayingartist {
+  display: block;
+}
+
+#nowplayingbuttons {
+  display: flex;
+  align-items: flex-end;
+  height: 100px;
+}
+
+#addtolist {
+  height: 30%;
+  width: 30px;
+  background: transparent;
+  border: none;
+  color: gray;
+  font-size: x-large;
+  cursor: pointer;
+
+}
+
+#addtofav {
+  height: 30%;
+  width: 30px;
+  border: none;
+  background: url(./img/star.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+#songtable {
+  max-height: 400px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
 table {
-  width: 100%;
+  width: 90%;
+  margin: 20px;
+  border-collapse:collapse;
+}
+
+tr:nth-child(even) {
+  background: rgb(41, 41, 41);
+}
+
+tr:hover {
+  background: rgba(255, 174, 0, 0.2);
+
 }
 
 .miniartwork {
@@ -57,14 +159,88 @@ table {
   height: 50px;
 }
 
+.id {
+  text-align: center;
+}
+
+.total {
+  text-align: right;
+  padding-right: 10px;
+}
+
 footer {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   position: absolute;
-  bottom: 0px;
+  bottom: -40px;
 }
 
 audio {
-  width: 80%;
+  width: 0;
+}
+
+#back {
+  width: 50px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  background-image: url("./img/rewind.svg");
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: 50% 50%;
+  cursor: pointer;
+}
+
+#pause {
+  width: 50px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  background-image: url("./img/pause.svg");
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: 50% 50%;
+  cursor: pointer;
+}
+
+#next {
+  width: 50px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  background-image: url("./img/forward.svg");
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: 50% 50%;
+  cursor: pointer;
+}
+
+#songrange {
+  width: 50%;
+  cursor: pointer;
+}
+
+#shuffle {
+  width: 50px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  background-image: url("./img/shuffle.svg");
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: 50% 50%;
+  cursor: pointer;
+}
+
+#volumeicon {
+  width: 30px;
+  height: 30px;
+  background-image: url(./img/volume.svg);
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 50% 50%;
+  cursor: pointer;
 }
 
