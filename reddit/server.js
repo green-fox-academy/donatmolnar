@@ -3,15 +3,16 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql');
+require('dotenv').config();
 
 app.use(express.json());
 app.use(express.static('public'));
 
 const conn = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'password',
-  database: 'reddit',
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
   insecureAuth: 'true',  
 });
 
