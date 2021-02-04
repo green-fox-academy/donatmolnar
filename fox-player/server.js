@@ -47,6 +47,7 @@ app.get('/playlists', (req,res) => {
     });
 });
 
+// adds new playlist
 app.post('/playlist', (req,res) => {
   let playlist = req.body.playlist;
 
@@ -75,7 +76,7 @@ app.delete('/playlists/:id', (req, res) => {
   let systemPlaylist;
   
   conn.query(
-    `SELECT * FROM playlists WHERE id = ?`, [id], (err, rows) => {
+    `SELECT * FROM playlists WHERE id = ?`, [providedId], (err, rows) => {
       if (err) {
         console.log(err.toString());
         res.status(500).json({error: 'error during reading sql db'});
@@ -89,7 +90,7 @@ app.delete('/playlists/:id', (req, res) => {
     res.json({error: 'System playlists cannot be removed'});
   } else {
     conn.query(
-      `DELETE FROM playlists WHERE id = ?;`, [id], (err, rows) => {
+      `DELETE FROM playlists WHERE id = ?;`, [providedId], (err, rows) => {
         if (err) {
           console.log(err.toString());
           res.status(500).json({error: 'error during deleting playlist from sql db'});
@@ -99,6 +100,27 @@ app.delete('/playlists/:id', (req, res) => {
     })
   }
 })
+
+let tracks = [
+  { "id": 1, "title": "Never Give Up", "artist": "Ars Sonor", "duration": 545, "path": "/audio/Ars_Sonor_-_02_-_Never_Give_Up.mp3" },
+  { "id": 2, "title": "Purple Drift", "artist": "Organoid", "duration": 312.12, "path": "/audio/Organoid_-_09_-_Purple_Drift.mp3" }
+]
+
+// lists all songs in a playlist
+app.get('/playlist-tracks/:playlist_id', (req,res) => {
+let playlistId = req.params.playlist_id;
+/*
+  conn.query(
+    `SELECT * FROM tracks;`, (err, rows) => {
+      if (err) {
+        console.log(err.toString());
+        res.status(500).json({error: 'error during reading sql db'});
+        return;
+      }  */
+      res.setHeader('Content-type', 'application/json');
+      res.status(200).json(tracks);
+    //});
+});
 
 
 
