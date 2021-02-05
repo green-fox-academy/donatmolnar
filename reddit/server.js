@@ -13,7 +13,7 @@ const conn = mysql.createConnection({
   user: process.env.MYSQL_USER,
   password: process.env.MYSQL_PASSWORD,
   database: process.env.MYSQL_DATABASE,
-  insecureAuth: 'true',  
+  insecureAuth: 'true',
 });
 
 // connects to mysq
@@ -79,15 +79,15 @@ app.post('/newpost', (req,res) => {
       }
     });
 
-    conn.query(
-      `SELECT * FROM posts WHERE is_active = true AND post_id = (SELECT MAX(post_id) FROM posts);`, (err, rows) => {
-        if (err) {
-          console.log(err.toString());
-          res.status(500).json({error: 'error during reading sql db'})
-          return;
-        }
-        res.status(200).json(rows);
-      });
+  conn.query(
+    `SELECT * FROM posts WHERE is_active = true AND post_id = (SELECT MAX(post_id) FROM posts);`, (err, rows) => {
+      if (err) {
+        console.log(err.toString());
+        res.status(500).json({error: 'error during reading sql db'})
+        return;
+      }
+      res.status(200).json(rows);
+    });
       //res.redirect('/');
 });
 
@@ -103,15 +103,15 @@ app.put('/posts/:id/upvote', (req,res) => {
       //res.status(200).json(rows);
     });
 
-    conn.query(
-      `SELECT * FROM posts WHERE is_active = true AND post_id = ?;`, [id], (err, rows) => {
-        if (err) {
-          console.log(err.toString());
-          res.status(500).json({error: 'error during reading sql db'})
-          return;
-        }
-        res.status(200).json(rows);
-      });
+  conn.query(
+    `SELECT * FROM posts WHERE is_active = true AND post_id = ?;`, [id], (err, rows) => {
+      if (err) {
+        console.log(err.toString());
+        res.status(500).json({error: 'error during reading sql db'})
+        return;
+      }
+      res.status(200).json(rows);
+    });
 });
 
 // downvote
@@ -126,15 +126,15 @@ app.put('/posts/:id/downvote', (req,res) => {
       //res.status(200).json(rows);
     });
 
-    conn.query(
-      `SELECT * FROM posts WHERE is_active = true AND post_id = ?;`, [id], (err, rows) => {
-        if (err) {
-          console.log(err.toString());
-          res.status(500).json({error: 'error during reading sql db'})
-          return;
-        }
-        res.status(200).json(rows);
-      });
+  conn.query(
+    `SELECT * FROM posts WHERE is_active = true AND post_id = ?;`, [id], (err, rows) => {
+      if (err) {
+        console.log(err.toString());
+        res.status(500).json({error: 'error during reading sql db'})
+        return;
+      }
+      res.status(200).json(rows);
+    });
 });
 
 // delete
